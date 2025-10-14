@@ -1,3 +1,4 @@
+import './Explore.css';
 import ExploreCard from "./ui/exploreCard";
 const DATA =[
  {

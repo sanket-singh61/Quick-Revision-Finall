@@ -1,31 +1,38 @@
 import ImageCard from "./ui/ImageCard";
+import './UpdateBox.css';
+import {BellDot, NotebookPen, Scroll, Send, Sticker, TicketsPlane } from "lucide-react";
 
 const DATA =[
  {
-    icon:"/vite.svg",
+    icon:<Send size={35} />,
     title:"Syllabus",
+    link: "/syllabus"
  },
  {
-    icon:"/vite.svg",
+    icon:<NotebookPen size={35} />,
     title:"Notes",
+    link: "/notes" 
  },
 {
-    icon:"/vite.svg",
+    icon:<Scroll size={35} />,
     title:"Previous Paper",
+    link: "/previous-paper"
  }, 
  {
-    icon:"/vite.svg",
-    title:"EXam Update",
+    icon:<BellDot size={35}/>,
+    title:"Exam Update",
+    link: "/exam-update"
  },
  {
-    icon:"/vite.svg",
+    icon:<Sticker size={35}/>,
     title:"Exam Result",
+    link: "/exam-result"
  },
  {
-    icon:"/vite.svg",
+    icon:<TicketsPlane size={35}/>,
     title:"Exam HallTicket",
+    link: "/exam-HallTicket"
  },
-
 ]
 
 const UpdateBox = () => {
@@ -46,13 +53,16 @@ const UpdateBox = () => {
                 </ul>
                 </div>
             </div>
-            <div id='UpdateBox-Card'>
+            <div className="updateBox-ImageCard">
+               <div id='UpdateBox-Card'>
                 {DATA.map((item) => (
                  <ImageCard
                  icon={item.icon}
                  title={item.title}
+                 link={item.link}
                  />
              ))}
+            </div>
             </div>
         </div>
      </div>
@@ -60,4 +70,4 @@ const UpdateBox = () => {
   )
 }
 
-export default UpdateBox
+export default UpdateBox;

@@ -1,11 +1,12 @@
-import icon1 from '/Whatsapp.svg';
-import icon2 from '/Instagram.svg';
-import icon3 from '/Telegram.svg';
-const iconlist =[icon1,icon2,icon3,];
+import './Navbar.css';
+// import icon1 from '/Whatsapp.svg';
+// import icon2 from '/Instagram.svg';
+// import icon3 from '/Telegram.svg';
+// const iconlist =[icon1,icon2,icon3,];
 
-const transformedIcon =(icon) =>{
-  return<img src={icon}/>
-}
+// const transformedIcon =(icon) =>{
+//   return<img src={icon}/>
+// }
 
 const Navbar = () => {
   return (
@@ -13,7 +14,11 @@ const Navbar = () => {
       <nav>
 
         {/* logo  */}
-        <div><img src="/RLogo.svg" id='LogoQuick' /></div>
+        {/* <div><img src="/RLogo.svg" id='LogoQuick' /></div> */}
+          <img src="/QR.png" id='LogoQuick' />
+        <div id='Logo-Name'>
+          Quick <br/> Revision
+        </div>
 
         {/* components */}
         <div id='Nav-Components'>
@@ -26,7 +31,7 @@ const Navbar = () => {
               <input
                id='Nav-Input'
                type="text"
-               placeholder="Search you're item..."
+               placeholder="Search you're notes..."
                // value={searchTerm}
                // onChange={handleSearchChange}
              />
@@ -36,9 +41,9 @@ const Navbar = () => {
         </div>
 
         {/* icons */}
-        <div id='icons'>
+        {/* <div id='icons'>
           {iconlist.map(transformedIcon)}
-        </div>
+        </div> */}
 
       </nav>
    </header>
