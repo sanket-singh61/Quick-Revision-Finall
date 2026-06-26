@@ -1,0 +1,151 @@
+/* Layout container */ 
+* { 
+  margin: 0;
+  padding: 0; 
+  box-sizing: border-box; 
+} 
+.flipbook-layout { 
+  display: flex; 
+  min-height: 80vh; 
+  background: #0f172a; /* gray-950 */  
+  /* color: white;  */
+  overflow: hidden; 
+} 
+/* Sidebar */ 
+.sidebar { 
+  width: 28rem; 
+  max-height: 835px; 
+  background: #0a4c41; 
+  padding: 1rem; 
+  box-shadow: 0 0 12px rgba(0,0,0,0.3); 
+  overflow-x: scroll; 
+  overflow-y: scroll; 
+  white-space: nowrap; 
+  transition: width 0.4s ease, transform 0.4s ease; position: relative; 
+} 
+.sidebar-title { 
+  font-size: 1.25rem; 
+  font-weight: bold; 
+  padding-bottom: 0.5rem; 
+  margin-bottom: 1rem; 
+  /* border-bottom: 1px solid #ccc;  */
+} 
+.sidebar-list { 
+  list-style: none; 
+  padding: 0; 
+  margin: 0; 
+} 
+.sidebar-item { 
+  padding: 0.5rem; 
+  cursor: pointer; 
+  border-radius: 6px; 
+  transition: 0.3s; 
+} 
+.sidebar-item:hover { 
+  background: #146b5e; 
+} 
+.active-topic {
+  width: auto; 
+  background: white; 
+  color: #0a4c41; 
+  font-weight: bold; 
+} 
+/* Flipbook area */ 
+.flipbook-viewer { 
+  flex: 1; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  background: #f3f4f6; /* gray-100 */ 
+} 
+.no-pages-message { 
+  font-size: 1.5rem; 
+  color: #555; 
+} 
+/*------------------sidebar style------------------*/ .sidebar.close { 
+  width: 60px; 
+} 
+/* When expanded */ 
+.sidebar.open { 
+  width: 250px; 
+} 
+/* Sidebar Header / Toggle Button Wrapper */ 
+.sidebar-main { 
+  display: flex; 
+  justify-content: flex-end; 
+  margin-bottom: 1rem; 
+} 
+/* Toggle Button */ 
+.toggle-btn { 
+  background: transparent; 
+  border: none; 
+  cursor: pointer; 
+  color: white; 
+  padding: 0; 
+} 
+/* Arrow rotation */ 
+.arrow { 
+  display: flex; 
+  transition: transform 0.3s ease; 
+  font-size: 24px; 
+} 
+/* If expanded → rotate arrow right */ 
+.arrow.Right { 
+  transform: rotate(180deg); 
+} 
+/* If collapsed → arrow stays normal */ 
+.arrow.left { 
+  transform: rotate(0deg); 
+} 
+/* Sidebar Title */ 
+.sidebar-title { 
+  font-size: 1.25rem; 
+  font-weight: bold; 
+  border-bottom: 1px solid #ccc; 
+  padding-bottom: 8px; 
+  margin-bottom: 1rem; 
+  transition: opacity 0.3s ease; 
+} 
+/* Hide title when collapsed */ 
+.sidebar.close .sidebar-title {
+   opacity: 0; 
+  } 
+  .sidebar-list { 
+    list-style: none; 
+    padding: 0; 
+    margin: 0; 
+  } 
+  /* Hide text when collapsed */ 
+  .sidebar.close .sidebar-item { 
+    text-indent: -9999px; 
+    opacity: 0;
+   }
+/*=================mobile responsive=================*/
+   @media (max-width: 480px) { 
+    .flipbook-layout { 
+      flex-direction: column; 
+      width: 100%; background-color: #555; 
+    } .sidebar { 
+      width: 100%; 
+      padding: 0.8rem; 
+      max-height: 250px; 
+    } 
+    .sidebar.open { 
+      height: 250px; 
+      width: 100%; 
+    } 
+    .sidebar-title { 
+      font-size: 1rem; 
+    } 
+    .sidebar-item { 
+      font-size: 0.9rem; 
+      padding: 0.4rem; 
+    } 
+    .flipbook-viewer { 
+      height: calc(100vh - 250px); 
+      padding: 6px; 
+    } 
+    .toggle-btn { 
+      font-size: 20px; 
+    } 
+  }

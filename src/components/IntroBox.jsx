@@ -1,19 +1,29 @@
 
 import { Button } from './ui/button';
+import { ArrowRight } from 'lucide-react';
+import "./IntroBox.css";
 
 const IntroBox = () => {
   return (
-   <section>
-     <div className='Intro'>
-       <div className='IntroBox'>
-         <div id='IntroBox-Text'>
-           <h4>Wellcome to <span>quick revision...</span></h4>
-           <h3>"Your Last-Minute Weapon <span>for first-Class Result"</span> </h3>
-           <p>Prepare for accedmic exam and placement in minimum time without any hassle.</p>
-           <Button>Let's Go</Button>
+   <section className="intro-section">
+     <div className='intro-container'>
+       <div className='intro-card'>
+         <div className='intro-content'>
+           <div className="badge">🚀 Your Study Companion</div>
+           <h1>Welcome to <span className="highlight">Quick Revision</span></h1>
+           <h2>Your Last-Minute Weapon <span className="highlight">for First-Class Results</span></h2>
+           <p>Prepare for academic exams and placements in minimum time without any hassle. Get access to curated, high-quality notes.</p>
+           
+           <div className="intro-actions">
+             <Button className="primary-btn">
+               Get Started 
+             </Button>
+           </div>
          </div>
-         <div id='IntroBox-Image'>
-           <img src="/HeroImage.svg" alt="Learning Image" />
+         <div className='intro-image-wrapper'>
+           <img src="/HeroImage.svg" alt="Learning Image" className="floating-img" />
+           {/* Background glow behind image */}
+           <div className="glow-effect"></div>
          </div>
        </div>
      </div>
@@ -21,4 +31,4 @@ const IntroBox = () => {
   )
 }
 
-export default IntroBox
+export default IntroBox;

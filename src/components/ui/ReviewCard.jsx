@@ -1,14 +1,14 @@
 
-const ReviewCard = ({ name, text, rating, img }) => {
+const ReviewCard = ({id, name, text, rating, img }) => {
   return (
     <div className="review-card">
-      <div className="review-top">
+       <div className="review-top">
         <img src={img} alt={name} className="review-avatar" />
         <div>
           <h4 className="review-name">{name}</h4>
           <div className="review-stars">
-            {Array.from({ length: Math.min(rating, 5) }).map(() => (
-              <span>⭐</span>
+            {Array.from({ length: Math.min(rating, 5) }).map((_, index) => (
+              <span key={index}>⭐</span>
             ))}
           </div>
         </div>

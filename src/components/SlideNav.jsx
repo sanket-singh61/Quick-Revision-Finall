@@ -1,6 +1,8 @@
 import React from 'react'
+import { Link , useParams} from 'react-router-dom';
 
 const SlideNav = () => {
+  const { branch, year, semester } = useParams();
   return (
     <section>
       <div className='slide'>
@@ -15,8 +17,8 @@ const SlideNav = () => {
                 <li><a href=""></a>Python</li>
                 <li><a href=""></a>IOT</li>
                 <li><a href=""></a>CAO</li>
-                <li><a href=""></a>Machine Learning</li>
-                <li><a href=""></a>Data Mining</li>
+                <li><Link to={`/notes/AIDS/3year/5th/machinelearning`}>Machine Learning</Link></li>
+                <li><Link to={`/notes/${branch}/${year}/${semester}/datamining`}>Data Mining</Link></li>
                 <li><a href=""></a>Data Science</li>
                 <li><a href=""></a>Operating System</li>
                 <li><a href=""></a>DCFM</li>
@@ -24,9 +26,10 @@ const SlideNav = () => {
                 <li><a href=""></a>MongoDB</li>
             </ul>
         </div>
+         <div className="Slide-line"></div>
       </div>
     </section>
   )
 }
 
-export default SlideNav
+export default SlideNav;

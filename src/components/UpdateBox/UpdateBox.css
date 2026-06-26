@@ -1,0 +1,253 @@
+.update-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  background-color: black;
+}
+
+.update-container {
+  width: 100%;
+  max-width: 1400px;
+}
+
+.update-content {
+  background: rgba(48, 58, 58, 0.4);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(102, 172, 177, 0.15);
+  box-shadow: 0 12px 40px rgba(50, 150, 134, 0.15);
+  border-radius: 24px;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: space-between;
+  padding: 50px;
+  position: relative;
+  overflow: hidden;
+  gap: 40px;
+}
+
+.update-content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center right, rgba(50, 150, 134, 0.12), transparent 60%);
+  pointer-events: none;
+}
+
+.update-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  color: rgb(219, 57, 32);
+  z-index: 2;
+}
+
+.university-logo {
+  width: 140px;
+  margin-bottom: 24px;
+  opacity: 0.9;
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
+}
+
+.update-info h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 24px;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+}
+
+.info-list-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.info-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.info-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  color: #e2e8f0;
+  font-size: 1.05rem;
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.5;
+}
+
+.check-icon {
+  color: #329686;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.update-cards-wrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.update-cards-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+/* Updated ImageCard Styles */
+.image-card-link {
+  text-decoration: none;
+  display: block;
+}
+
+.image-card {
+  height: 100%;
+  min-height: 140px;
+  background: rgba(32, 36, 36, 0.6);
+  border: 1px solid rgba(50, 150, 134, 0.2);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  padding: 24px 16px;
+  text-align: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.image-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(50, 150, 134, 0.1), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.image-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(50, 150, 134, 0.5);
+  box-shadow: 0 12px 30px rgba(50, 150, 134, 0.2);
+  background: rgba(48, 58, 58, 0.8);
+}
+
+.image-card:hover::before {
+  opacity: 1;
+}
+
+.image-card-icon-wrapper {
+  color: #a7c5c0;
+  margin-bottom: 12px;
+  transition: all 0.3s ease;
+  z-index: 2;
+}
+
+.image-card:hover .image-card-icon-wrapper {
+  color: #329686;
+  transform: scale(1.1);
+}
+
+.image-card h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  color: #e2e8f0;
+  z-index: 2;
+  transition: color 0.3s ease;
+}
+
+.image-card:hover h4 {
+  color: #ffffff;
+}
+
+/* ============ MOBILE RESPONSIVE ============ */
+@media screen and (max-width: 1023px) {
+  .update-section {
+    padding: 40px 20px;
+  }
+  
+  .update-content {
+    flex-direction: column;
+    padding: 40px;
+    gap: 50px;
+  }
+  
+  .update-info {
+    align-items: center;
+    text-align: center;
+  }
+  
+  .info-list li {
+    text-align: left;
+    justify-content: flex-start;
+  }
+  
+  .update-info h2 {
+    font-size: 1.8rem;
+  }
+  
+  .update-cards-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .update-section {
+    padding: 30px 15px;
+  }
+  
+  .update-content {
+    padding: 30px 20px;
+    border-radius: 20px;
+  }
+  
+  .update-info h2 {
+    font-size: 1.5rem;
+  }
+  
+  .info-list li {
+    font-size: 0.95rem;
+  }
+  
+  .update-cards-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .image-card {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 80px;
+    padding: 16px 20px;
+    gap: 20px;
+  }
+  
+  .image-card-icon-wrapper {
+    margin-bottom: 0;
+  }
+  
+  .image-card h4 {
+    text-align: left;
+  }
+}

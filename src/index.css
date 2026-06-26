@@ -1,18 +1,35 @@
+@import "tailwindcss";
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: black;
+}
+:root{
+  background-color: black;
+}
+
 body {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   font-weight: 400;
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   /* background-color: #2d2d2d;  */
-  background-color: black;
-  height: 380vh;
+  background-color: rgb(0, 0, 0);
+  /* height: 380vh; */
 }
-
+.button-normal{
+  height: 45px;
+  width: 110px;
+  background-color: #0a4c41;
+  border-radius: 18px;
+  border: 1px solid #14695b ;
+}
  /* SlideNav styling */
  
 section{
@@ -22,18 +39,26 @@ section{
   width: 100%;
   max-width: 1600px;
   /* background-color: aliceblue; */
+  /* justify-content: center; */
+    /* margin: 0px !important; */
+  /* margin-left: 40px; */
 }
+
 .slide{
   width: 100%;
-  height: 30px;
+  height: 40px;
   max-width: 1600px;
   /* background-color: rgb(37, 43, 42); */
-  background-color: rgba(80, 79, 79, 0.482);
-  color: #329686;
+  background-color: rgba(29, 36, 34, 0.482);
+  /* color: #044a3e; */
+  color: white;
   display: flex;
   align-items: center;
-  justify-content: center;
-  
+  justify-content: center; 
+  flex-direction: column; 
+  gap: 2px;
+  font-family: poppins;
+  /* margin: 0px !important; */
 }
 .slideNav{
    display: flex;
@@ -47,11 +72,9 @@ section{
    scrollbar-width: none;
    white-space: nowrap;
    cursor: pointer;
-   /* background-color: rosybrown; */
-   /* position:absolute; */
 
    ul{
-    margin-left: 785px;
+    margin-left: 690px;
    }
   
    ul,li {
@@ -67,86 +90,13 @@ section{
      justify-content: center;
      margin-right: 0px;
    }
-}
-
-             /* IntroBox Style */
-.Intro{
+ }
+ .Slide-line{
   width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px;
-  max-width: 1600px;
-
-  
-}
-.IntroBox,#UpdateBox-Container{
-  width: 80%;
-  height: 500px;
-  background-color: rgb(17, 18, 18);
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-evenly;
-  border-radius: 14px;
-}
-.IntroBox:hover{
-    box-shadow: 0px 0px 1.5px 1.5px #329686;
-}
-#IntroBox-Text{
-  height: 450px;
-  width: 50%;
-  /* background-color: rgb(92, 84, 76); */
-  display: flex;
-  flex-direction: column;
-  align-items:baseline;
-  h4{
-    width: 600px;
-    margin-top: 50px;
-    font-weight: bolder;
-    font-size: 2.3rem;
-    color: #ffffff;
-  }
-  h3{
-    /* width: 515px; */
-    width: 330px;
-    font-weight: bolder;
-    font-size: 1.5rem;
-    margin-top: 10px;
-    margin-left: 80px;
-    color: #aaa6a6;
-  }
-  p{
-    margin-top: 15px;
-    font-size:large;
-    width: 340px;
-    color: #aaa6a6;
-
-  }
-  
-  span{
-    color: #329686;
-  }
-  .button-normal{
-    margin: 10px;
-  }
-}
-#IntroBox-Image{
-  height: 450px;
-  width: 50%;
-  display: flex;
-  justify-content: center;
-}
-
-.button-normal{
-  height: 45px;
-  width: 110px;
-  background-color: #14695b;
-  border-radius: 18px;
-  border: 3px solid #14695b ;
-}
-
+  height: 1px;
+  background-color: #067366;
+ }
+          
 /* UpdateBox style */
 
 .heading-Container{
@@ -291,36 +241,6 @@ section{
     width: 100%;
     ul{
       margin-left:  1650px;
-    }
-  }
-  .Intro{
-    height: 660px;
-    .IntroBox{
-      height: 650px;
-      display: flex;
-      flex-direction: column;
-      box-shadow: 0px 0px 1.5px 1.5px #329686;
-
-    }
-    #IntroBox-Text{
-      display: flex;
-      align-items: center;
-     h4{
-      width: 250px;
-      font-size: 30px;
-     }
-     h3{
-      font-size: 20px;
-     }
-     p{
-      font-size: 15px;
-      width: 250px;
-     }
-    }
-    #IntroBox-Image{
-      img{
-        width: 250px;
-      }
     }
   }
   .ImageCard{

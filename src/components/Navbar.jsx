@@ -1,53 +1,48 @@
 import './Navbar.css';
-// import icon1 from '/Whatsapp.svg';
-// import icon2 from '/Instagram.svg';
-// import icon3 from '/Telegram.svg';
-// const iconlist =[icon1,icon2,icon3,];
-
-// const transformedIcon =(icon) =>{
-//   return<img src={icon}/>
-// }
+import { Button } from './ui/button';
+import { Link } from 'react-router-dom';
+import { Search } from 'lucide-react';
 
 const Navbar = () => {
   return (
-   <header>
-      <nav>
+    <header className="navbar-header">
+      <nav className="navbar-container">
+        {/* logo */}
+        <Link to="/" className="navbar-brand">
+          <img src="/QR.png" id="LogoQuick" alt="Quick Revision Logo" />
+          <div className="brand-name">
+            Quick <span>Revision</span>
+          </div>
+        </Link>
 
-        {/* logo  */}
-        {/* <div><img src="/RLogo.svg" id='LogoQuick' /></div> */}
-          <img src="/QR.png" id='LogoQuick' />
-        <div id='Logo-Name'>
-          Quick <br/> Revision
+        {/* links & search */}
+        <div className="navbar-menu">
+          <ul className="nav-links">
+            <li><Link to="/home">Home</Link></li>
+            <li><Link to="/about">About</Link></li>
+            <li><Link to="/notes">Notes</Link></li>
+            <li><Link to="/contact">Contact</Link></li>
+          </ul>
+          
+          <form className="nav-search" onSubmit={(e) => e.preventDefault()}>
+            <Search className="search-icon" size={18} />
+            <input
+              type="text"
+              placeholder="Search your notes..."
+              className="search-input"
+            />
+          </form>
         </div>
 
-        {/* components */}
-        <div id='Nav-Components'>
-            <ul>
-                <li><a href="">Home</a></li>
-                <li><a href="">About Us</a></li>
-                <li><a href="">Notes</a></li>
-                <li><a href="">Contact Us</a></li>
-              <form action="">
-              <input
-               id='Nav-Input'
-               type="text"
-               placeholder="Search you're notes..."
-               // value={searchTerm}
-               // onChange={handleSearchChange}
-             />
-             <button type="submit">Search</button>
-            </form>
-            </ul>
+        {/* login button */}
+        <div className="navbar-actions">
+          <Link to="/login">
+            <Button className="login-btn">Login</Button>
+          </Link>
         </div>
-
-        {/* icons */}
-        {/* <div id='icons'>
-          {iconlist.map(transformedIcon)}
-        </div> */}
-
       </nav>
-   </header>
-  )
-}
+    </header>
+  );
+};
 
-export default Navbar
+export default Navbar;
